@@ -17,8 +17,8 @@
            <strong><%= message_type.capitalize %>!</strong>
           <%= message %>
         </div>
-
       <% end %>
+      <h1><%= yield(:tumama) %></h1>
       <%= yield %>
     </div>
     <%= render 'layouts/footer' %>
