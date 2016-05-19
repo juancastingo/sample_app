@@ -18,9 +18,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)    # Not the final implementation!
     Rails.logger.debug "\033[1;34;40m[DEBUG] Juanca-DEBUG: \033[0m " + @user.to_s
     if @user.save
-      log_in @user
-      flash[:success] = "Welcome to the Sample App!"
-      redirect_to @user # igual a redirect_to user_url(@user)
+      @user.send_activation_email
+      flash[:info] = "Please check your email to activate your account."
+      redirect_to root_url # igual a redirect_to user_url(@user)
     else
       render 'new'
     end
