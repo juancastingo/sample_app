@@ -11,6 +11,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     #debugger
     @parametros = params
+    redirect_to root_url and return unless @user.activated
   end
 
  
@@ -41,7 +42,8 @@ class UsersController < ApplicationController
   end
 
   def index 
-    @users = User.paginate(page: params[:page])
+    #@users = User.paginate(page: params[:page])
+    @users = User.where(activated: true).paginate(page: params[:page])
   end
 
   def destroy
