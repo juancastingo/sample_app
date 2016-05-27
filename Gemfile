@@ -1,20 +1,23 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 
 gem 'faker'
+
+gem 'carrierwave',             '0.10.0'
+gem 'mini_magick',             '3.8.0'
+gem 'fog',                     '1.36.0'
+
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
-
 
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'sass-rails', '>= 3.2'
 
 # Use sqlite3 as the database for Active Record
 # Use SCSS for stylesheets
-#gem 'sass-rails', '~> 5.0'
+# gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
@@ -35,7 +38,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'bcrypt', '~> 3.1.7'
 gem 'bcrypt'
 
-#gem 'jquery-turbolinks' # no funcó
+# gem 'jquery-turbolinks' # no funcó
 
 # Use Unicorn as the app server
 # gem 'unicorn'

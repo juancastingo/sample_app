@@ -3,20 +3,20 @@ class UsersController < ApplicationController
   before_action :correct_user,   only: [:edit, :update]
   before_action :admin_user, only: :destroy
 
-
   def new
     @user = User.new
   end
+
   def show
     @user = User.find(params[:id])
-    #debugger
+    # debugger
     @parametros = params
-    redirect_to root_url and return unless @user.activated
+    @microposts = @user.microposts.paginate(page: params[:page])
+    redirect_to root_url && return unless @user.activated
   end
 
- 
   def create
-    @user = User.new(user_params)    # Not the final implementation!
+    @user = User.new(user_params) # Not the final implementation!
     Rails.logger.debug "\033[1;34;40m[DEBUG] Juanca-DEBUG: \033[0m " + @user.to_s
     if @user.save
       @user.send_activation_email
@@ -41,7 +41,7 @@ class UsersController < ApplicationController
     end
   end
 
-  def index 
+  def index
     #@users = User.paginate(page: params[:page])
     @users = User.where(activated: true).paginate(page: params[:page])
   end
@@ -54,16 +54,9 @@ class UsersController < ApplicationController
   end
 
   private
+
     def user_params
       params.require(:user).permit(:name, :email, :password, :password_confirmation)
-    end
-
-    def logged_in_user
-      unless logged_in?
-        store_location
-        flash[:danger] = "Please log in."
-        redirect_to login_url
-      end
     end
 
     def correct_user
