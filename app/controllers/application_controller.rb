@@ -1,5 +1,6 @@
 # clase ppal de controllers
 class ApplicationController < ActionController::Base
+  include Common
   protect_from_forgery with: :exception
   include SessionsHelper
 
@@ -13,4 +14,5 @@ class ApplicationController < ActionController::Base
         redirect_to login_url
       end
     end
+
 end

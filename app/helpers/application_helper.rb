@@ -4,8 +4,18 @@ module ApplicationHelper
     base_title = "Juanca App"
     if page_title.empty?
       base_title
-    else 
+    else
       page_title + " | " + base_title
     end
   end
+
+  def img_or_gravatar(user, size = '50')
+    size = size.to_s
+    if user.picture.blank?
+      link_to gravatar_for(user, size: size), user
+    else
+      image_tag(user.picture, size: size, class: 'perfil')
+    end
+  end
+
 end

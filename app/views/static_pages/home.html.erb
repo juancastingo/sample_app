@@ -1,3 +1,8 @@
+
+<center>
+  <h3> <%= link_to "Users: #{@users_in_db}", users_path  %> </h3>
+</center>
+
 <% if logged_in? %>
   <div class="row">
     <aside class="col-md-4">
@@ -24,6 +29,7 @@
   <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
 </div>
 
-<%= link_to image_tag("rails.png", alt: "Rails logo"),
-            'http://rubyonrails.org/' %>
+
 <% end %>
+
+

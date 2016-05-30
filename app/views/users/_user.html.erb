@@ -1,5 +1,9 @@
 <li>
-  <%= gravatar_for user, size: 50 %>
+
+
+  <%= img_or_gravatar user, '100' %>
+
+
   <%= user.id %> -
   <%= link_to user.name, user %>
   <% if current_user.admin? && !current_user?(user) %>
