@@ -26,6 +26,9 @@ class StaticPagesController < ApplicationController
     texto = Time.zone.now
     my_log texto.to_s
 
+    current_user.create_reset_digest
+    current_user.send_password_reset_email
+
     # output = `curl -s --user 'api:key-401c0b6ce947507697901c3d460b2c99' \
     #  https://api.mailgun.net/v3/sandboxd49dad5e176b4884aede3fdb9b1bac75.mailgun.org/messages \
     #  -F from='Rama <postmaster@sandboxd49dad5e176b4884aede3fdb9b1bac75.mailgun.org>' \
