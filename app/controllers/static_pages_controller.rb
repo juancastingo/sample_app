@@ -1,8 +1,11 @@
 class StaticPagesController < ApplicationController
   def home
+
+
     if logged_in?
       @micropost = current_user.microposts.build
       @feed_items = current_user.feed.paginate(page: params[:page])
+
     end
     @users_in_db = User.where(activated: true).count
 
@@ -22,7 +25,6 @@ class StaticPagesController < ApplicationController
 
     texto = Time.zone.now
     my_log texto.to_s
-
 
     # output = `curl -s --user 'api:key-401c0b6ce947507697901c3d460b2c99' \
     #  https://api.mailgun.net/v3/sandboxd49dad5e176b4884aede3fdb9b1bac75.mailgun.org/messages \

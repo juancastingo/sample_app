@@ -45,6 +45,8 @@ gem 'bcrypt'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+#
+gem 'figaro'
 
 group :development do
   gem 'web-console', '~> 2.0'
