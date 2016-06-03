@@ -115,7 +115,7 @@ Rails.application.configure do
     authentication: :plain,
     address: "smtp.mailgun.org",
     port: 587,
-    domain: "localhost:3000",
+    domain: "jcstwitter.herokuapp.com",
     user_name: ENV["MAILGUN_USERNAME"],
     password: ENV["MAILGUN_PASSWORD"]
   }
