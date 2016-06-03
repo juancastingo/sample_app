@@ -14,7 +14,7 @@ module ApplicationHelper
     if user.picture.blank?
       link_to gravatar_for(user, size: size), user
     else
-      image_tag(user.picture, size: size, class: 'perfil')
+      link_to image_tag(user.picture, size: size, class: 'perfil'), user
     end
   end
 
