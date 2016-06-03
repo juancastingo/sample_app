@@ -91,33 +91,33 @@ Rails.application.configure do
   #   :enable_starttls_auto => true
   # }
 
-  # config.action_mailer.default_url_options = { :host => 'jcstwitter.herokuapp.com' }
-  # config.action_mailer.delivery_method = :smtp
-  # config.action_mailer.perform_deliveries = true
-  # config.action_mailer.raise_delivery_errors = false
-  # config.action_mailer.default :charset => "utf-8"
-  # config.action_mailer.smtp_settings = {
-  #   address: "smtp.gmail.com",
-  #   port: 587,
-  #   domain: "myapp.herokuapp.com",
-  #   authentication: "plain",
-  #   enable_starttls_auto: true,
-  #   user_name: ENV["GMAIL_USERNAME"],
-  #   password: ENV["GMAIL_PASSWORD"]
-  # }
-
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
-  config.action_mailer.perform_deliveries = true
-  config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.default :charset => "utf-8"
+  config.action_mailer.default_url_options = { :host => 'jcstwitter.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default :charset => "utf-8"
   config.action_mailer.smtp_settings = {
-    authentication: :plain,
-    address: "smtp.mailgun.org",
+    address: "smtp.gmail.com",
     port: 587,
-    domain: "localhost:3000",
-    user_name: ENV["MAILGUN_USERNAME"],
-    password: ENV["MAILGUN_PASSWORD"]
+    domain: "jcstwitter.herokuapp.com",
+    authentication: "plain",
+    enable_starttls_auto: true,
+    user_name: ENV["GMAIL_USERNAME"],
+    password: ENV["GMAIL_PASSWORD"]
   }
+
+  # config.action_mailer.default_url_options = { :host => 'jcstwitter.herokuapp.com' }
+  # config.action_mailer.perform_deliveries = true
+  # config.action_mailer.raise_delivery_errors = true
+  # config.action_mailer.default :charset => "utf-8"
+  # config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.smtp_settings = {
+  #   authentication: :plain,
+  #   address: "smtp.mailgun.org",
+  #   port: 587,
+  #   domain: "jcstwitter.herokuapp.com",
+  #   user_name: ENV["MAILGUN_USERNAME"],
+  #   password: ENV["MAILGUN_PASSWORD"]
+  # }
 
 end
