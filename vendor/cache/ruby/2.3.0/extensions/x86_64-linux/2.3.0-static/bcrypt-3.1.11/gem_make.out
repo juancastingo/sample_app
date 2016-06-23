@@ -1,0 +1,19 @@
+current directory: /home/stingo/Desktop/nuevo-fs/vagrantMachine/curso/dev/libro/railstutorial/sample_app/vendor/cache/ruby/2.3.0/gems/bcrypt-3.1.11/ext/mri
+/usr/local/bin/ruby -r ./siteconf20160623-21174-1pph551.rb extconf.rb
+creating Makefile
+
+current directory: /home/stingo/Desktop/nuevo-fs/vagrantMachine/curso/dev/libro/railstutorial/sample_app/vendor/cache/ruby/2.3.0/gems/bcrypt-3.1.11/ext/mri
+make "DESTDIR=" clean
+
+current directory: /home/stingo/Desktop/nuevo-fs/vagrantMachine/curso/dev/libro/railstutorial/sample_app/vendor/cache/ruby/2.3.0/gems/bcrypt-3.1.11/ext/mri
+make "DESTDIR="
+compiling crypt.c
+compiling bcrypt_ext.c
+compiling crypt_gensalt.c
+compiling wrapper.c
+compiling crypt_blowfish.c
+linking shared-object bcrypt_ext.so
+
+current directory: /home/stingo/Desktop/nuevo-fs/vagrantMachine/curso/dev/libro/railstutorial/sample_app/vendor/cache/ruby/2.3.0/gems/bcrypt-3.1.11/ext/mri
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bcrypt_ext.so ./.gem.20160623-21174-1d7sxn9
